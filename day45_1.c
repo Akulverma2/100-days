@@ -1,0 +1,38 @@
+//Q89: Count frequency of a given character in a string.
+
+/*
+Sample Test Cases:
+Input 1:
+programming
+g
+Output 1:
+2
+
+*/
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    char ch;
+    int i, count = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    int len = strlen(str);
+    if (len > 0 && str[len - 1] == '\n') {
+        str[len - 1] = '\0';
+        len--;
+    }
+printf("Enter a character to find its frequency: ");
+    scanf("%c", &ch);
+
+    for(i = 0; i < len; i++) {
+        if(str[i] == ch) {
+            count++;
+        }
+    }
+    printf("Frequency of '%c': %d\n", ch, count);
+
+    return 0;
+}
